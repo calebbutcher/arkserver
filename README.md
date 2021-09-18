@@ -40,7 +40,7 @@ $ docker run -d \
     impunitus/arkserver
 ```
 
-### docker-compose (recommended, [see linuxserverio's docs for more info](https://docs.linuxserver.io/general/docker-compose))
+### docker-compose (recommended, [see linuxserver's docs for more info](https://docs.linuxserver.io/general/docker-compose))
 ```yaml
 version: "3.4"
 services:
