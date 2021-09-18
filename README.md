@@ -40,6 +40,30 @@ $ docker run -d \
     impunitus/arkserver
 ```
 
+### docker-compose (recommended, [see linuxserverio's docs for more info](https://docs.linuxserver.io/general/docker-compose))
+```yaml
+version: "3.4"
+services:
+  ark-server:
+    container_name: arkserver
+    image: impunitus/arkserver:latest
+    restart: unless-stopped
+    environment:
+        - PUID=${PUID} # default user id, defined in .env
+        - PGID=${PGID} # default group id, defined in .env
+        - TZ=${TZ} # timezone, defined in .env
+    volumes:
+        - /dockerMounts/steam:/home/steam/Steam # Mounted for workshop and mod persistance
+        - /dockerMounts/ark:/ark
+    ports:
+        - 7777:7777/tcp
+        - 7777:7777/udp
+        - 7778:7778/tcp
+        - 7778:7778/udp
+        - 27015:27015/tcp
+        - 27015:27015/udp
+```
+
 If the exposed ports are modified (in the case of multiple containers/servers on the same host) the `arkmanager` config will need to be modified to reflect the change as well. This is required so that `arkmanager` can properly check the server status and so that the ARK server itself can properly publish its IP address and query port to steam.
 
 ## Environment Variables
