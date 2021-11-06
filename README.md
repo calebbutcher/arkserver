@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/impunitus/arkserver/dockerhubci)![Docker Pulls](https://img.shields.io/docker/pulls/impunitus/arkserver)![GitHub](https://img.shields.io/github/license/impunitus/arkserver)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/calebbutcher/arkserver/dockerhubci)![Docker Pulls](https://img.shields.io/docker/pulls/impunitus/arkserver)![GitHub](https://img.shields.io/github/license/calebbutcher/arkserver)
 
 # arkserver
 Container to run an Ark Server, built off steamcmd base image with arkmanager
@@ -7,7 +7,7 @@ Container to run an Ark Server, built off steamcmd base image with arkmanager
 
 This is an image for running an ARK: Survival Evolved server in a Docker container. It is heavily influenced by [thmhoag](https://github.com/thmhoag)'s [thmhoag/arkserverr](https://github.com/thmhoag/arkserver). We are also using [FezVrasta](https://github.com/FezVrasta)'s [arkmanager](https://github.com/FezVrasta/ark-server-tools) (ark-server-tools) to manage a single-instance ARK: Survival Evolved Server inside a docker container.
 
-We are inheriting from [impunitus/steamcmd](https://github.com/impunitus/steamcmd) to ensure we have the latest version of `steamcmd`
+We are inheriting from [calebbutcher/steamcmd](https://github.com/calebbutcher/steamcmd) to ensure we have the latest version of `steamcmd`
 
 For additional information on `arkmanager`, see: https://github.com/FezVrasta/ark-server-tools
 
@@ -25,7 +25,7 @@ For additional information on `arkmanager`, see: https://github.com/FezVrasta/ar
 
 ### Pulling container
 ```bash
-docker pull impunitus/arkserver:latest
+docker pull calebbutcher/arkserver:latest
 ```
 
 ### Running the ARK Server
@@ -46,7 +46,7 @@ version: "3.4"
 services:
   ark-server:
     container_name: arkserver
-    image: impunitus/arkserver:latest
+    image: calebbutcher/arkserver:latest
     restart: unless-stopped
     environment:
         - PUID=${PUID} # default user id, defined in .env
@@ -103,7 +103,7 @@ Inside the `/ark` volume there are several directories containing server related
 
 | Path | Description |
 | - | - |
-| /ark/backup | Location of the zipped backups genereated from the `arkmaanger backup` command. Compressed using bz2. |
+| /ark/backup | Location of the zipped backups genereated from the `arkmanager backup` command. Compressed using bz2. |
 | /ark/config | Location of server config files. More information: |
 | /ark/log | Location of the arkmanager and arkserver log files |
 | /ark/server | Location of the server installation performed by `steamcmd`. This will contain the ShooterGame directory and the actual server binaries. |

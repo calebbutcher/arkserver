@@ -1,4 +1,4 @@
-FROM impunitus/steamcmd:latest
+FROM calebbutcher/steamcmd:latest
 
 USER root
 
