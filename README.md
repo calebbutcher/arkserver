@@ -25,7 +25,7 @@ For additional information on `arkmanager`, see: https://github.com/FezVrasta/ar
 
 ### Pulling container
 ```bash
-docker pull calebbutcher/arkserver:latest
+docker pull impunitus/arkserver:latest
 ```
 
 ### Running the ARK Server
@@ -46,7 +46,7 @@ version: "3.4"
 services:
   ark-server:
     container_name: arkserver
-    image: calebbutcher/arkserver:latest
+    image: impunitus/arkserver:latest
     restart: unless-stopped
     environment:
         - PUID=${PUID} # default user id, defined in .env

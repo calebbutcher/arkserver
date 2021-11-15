@@ -13,6 +13,7 @@ COPY arkmanager/arkmanager.cfg /etc/arkmanager/arkmanager.cfg
 COPY arkmanager/instance.cfg /etc/arkmanager/instances/main.cfg
 COPY run.sh /home/steam/run.sh
 COPY log.sh /home/steam/log.sh
+RUN chmod +x run.sh
 
 RUN mkdir /ark && \
     chown -R steam:steam /home/steam/ /ark
