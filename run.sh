@@ -37,6 +37,7 @@ if [ ! -d /ark/config/arkmanager.cfg ]; then
 	echo -e "# Ark Server Tools - arkmanager config\n# Generated from container environment variables\n\n" > /ark/config/arkmanager.cfg
 	if [ -f /ark/config/arkmanager_base.cfg ]; then
 	cat /ark/config/arkmanager_base.cfg >> /ark/config/arkmanager.cfg
+fi
 	echo "Creation of arkmanager.cfg from enviroment variables completed..."
 else
 	echo "arkmanager.cfg already exists, skipping creation with baselines..."
